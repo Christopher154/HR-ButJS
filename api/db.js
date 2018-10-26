@@ -34,3 +34,14 @@ exports.getUsers = (callback) => {
 
     )
 }
+
+exports.getEmployeeReport = (department, callback) => {
+    db.query(
+        'CALL generateReport(?)',
+        department,
+        (error, results, fields) => {
+            if(error) throw error;
+            callback(results)
+        }
+    )
+}

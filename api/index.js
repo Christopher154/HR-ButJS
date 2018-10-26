@@ -20,6 +20,12 @@ api.post('/adduser', (req, res) => {
     })
 })
 
+api.post('/generateEmployeeReport', (req, res) => {
+    db.getEmployeeReport(req.body, () => {
+        
+    })
+})
+
 api.listen(8002, () => {
     console.log('Listening on port 8002')
 });
