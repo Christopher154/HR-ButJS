@@ -28,6 +28,13 @@ api.post('/generateEmployeeReport', (req, res) => {
     })
 })
 
+api.get('/departments', (req, res) => {
+    db.getDepartments((results) => {
+        users = results;
+        res.send(users)
+    })
+})
+
 api.listen(8002, () => {
     console.log('Listening on port 8002')
 });
