@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'owen',
+    user: 'chris',
     password: 'password',
     database: 'employees'
 })
@@ -22,7 +22,7 @@ exports.addUser = (data, callback) => {
             callback(results.insertId)
          }
     )
-};
+}
 
 exports.getUsers = (callback) => {
     db.query(
@@ -31,7 +31,6 @@ exports.getUsers = (callback) => {
             if(err) throw err;
             callback(rows);
         }
-
     )
 }
 
@@ -42,6 +41,16 @@ exports.getEmployeeReport = (department, callback) => {
         (error, results, fields) => {
             if(error) throw error;
             callback(results)
+        }
+    )
+}
+
+exports.getDepartments = (callback) => {
+    db/query(
+        'CALL getDepartments()',
+        (error, results, fields) => {
+            if(error) throw error;
+            callback(results);
         }
     )
 }
