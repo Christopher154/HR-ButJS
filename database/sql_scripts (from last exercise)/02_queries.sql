@@ -40,5 +40,9 @@ BEGIN
 END ^^
 DELIMITER ;
 
-
-
+DELIMITER //
+CREATE PROCEDURE getDepartments()
+BEGIN
+	SELECT department_name FROM department
+END //
+DELIMITER ;
