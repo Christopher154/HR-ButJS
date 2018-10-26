@@ -11,7 +11,6 @@ function updateUsers  (usersReady) {
     })
 }
 
-
 users = []
 
 api.post('/adduser', (req, res) => {
