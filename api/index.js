@@ -1,11 +1,12 @@
 const express = require('express');
-const db = './db.js'
+const db = require('./db.js')
 
 const api = express();
+api.use(express.json())
 
 function updateUsers  (usersReady) {
     db.getUsers((rows) => {
-        cities = rows;
+        users = rows;
         usersReady();
     })
 }
@@ -21,8 +22,9 @@ api.post('/adduser', (req, res) => {
 })
 
 api.post('/generateEmployeeReport', (req, res) => {
-    db.getEmployeeReport(req.body, () => {
-        
+    db.getEmployeeReport(req.body, (results) => {
+        users = results;
+        res.send(users)
     })
 })
 
