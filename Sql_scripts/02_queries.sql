@@ -1,3 +1,4 @@
+USE employees;
 DELIMITER $$
 CREATE PROCEDURE newEmployee (IN new_f_name varchar(25), 
 							  IN new_l_name varchar(25),
@@ -41,8 +42,8 @@ END ^^
 DELIMITER ;
 
 DELIMITER //
-CREATE PROCEDURE getDepartments()
+CREATE PROCEDURE getDepartments ()
 BEGIN
-	SELECT department_name FROM department
+	SELECT department_name FROM Department;
 END //
 DELIMITER ;
