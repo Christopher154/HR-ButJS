@@ -1,0 +1,14 @@
+<form (ngSubmit)="addEmployee(addEmployee)" #addForm="ngForm">
+  <fieldset>
+    <legend>Add Employee</legend>
+    <div><input [(ngModel)]="newEmployee." name="name" placeholder="First Name" required ></div>
+    <div><input [(ngModel)]="newEmployee.countrycode" name="countrycode" placeholder="Last Name" required></div>
+    <div><input [(ngModel)]="newEmployee.district" name="district" placeholder="Address" required ></div>
+    <div><input [(ngModel)]="newEmployee.population" name="population" placeholder="Population" required ></div>
+    <!-- <div *ngIf="addForm.hasError('required', 'cityname')">City name is required.</div>
+    <div *ngIf="addForm.hasError('required', 'countrycode')">Country Code is required.</div>
+    <div *ngIf="addForm.hasError('required', 'district')">District is required.</div>
+    <div *ngIf="addForm.hasError('required', 'population')">Population is required.</div> -->
+    <input type="submit" [disabled]="!addForm.valid">
+  </fieldset>
+</form>
