@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { DataService } from '../data.service';
-import { Employee } from "../classes/employee";
+import { Employee } from '../../classes/employee';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -18,12 +18,11 @@ export class AddEmployeeComponent implements OnInit {
 
   addEmployee(addForm): void {
     if (addForm.valid) {
-      this.data.addEmployee(this.newEmployee).subscribe(resp => {
-        this.newEmployee.id = resp.id;
-        console.log(this.newEmployee);
-      });
+      var employeeToAdd = this.newEmployee;
+      this.newEmployee = new Employee();
+      this.data.addEmployee(employeeToAdd);
     } else {
-      console.error("Add Employee from is in an invalid state.");
+      console.error("Add Employee form is in an invalid state.");
     }
   }
 
