@@ -14,3 +14,14 @@ db.connect(function(err) {
 
 exports.addUser = (data, callback) => {
 }
+
+exports.getUsers = (callback) => {
+    db.query(
+        'SELECT first_name, last_name, address, nin, iban, starting_salary FROM Employee',
+        function(err, rows) {
+            if(err) throw err;
+            callback(rows);
+        }
+
+    )
+}
