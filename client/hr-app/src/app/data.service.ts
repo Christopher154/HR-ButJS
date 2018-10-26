@@ -11,7 +11,6 @@ export class DataService {
 
   employee = this.http.get<Employee[]>('/api/employee');
   public addEmployee(newEmployee: Employee) {
-    console.log("Hit me here")
     return this.http.post<Employee[]>('/api/adduser', newEmployee);
   }
 }
