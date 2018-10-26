@@ -17,15 +17,10 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   addEmployee(addForm): void {
-    console.log(addForm);
-    
       var employeeToAdd = this.newEmployee;
       this.newEmployee = new Employee();
-      console.log(employeeToAdd);
       this.data.addEmployee(employeeToAdd).subscribe(() => {
-        
       });
-
   }
 
   ngOnInit() {
