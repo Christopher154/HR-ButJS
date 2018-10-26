@@ -11,6 +11,6 @@ export class DataService {
 
   employee = this.http.get<Employee[]>('/api/employee');
   public addEmployee(newEmployee: Employee): void {
-    this.employee = this.http.post<Employee[]>('/api/addemployee', newEmployee);
+    this.employee = this.http.post<Employee[]>('/api/adduser', newEmployee);
   }
 }
