@@ -10,7 +10,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   employee = this.http.get<Employee[]>('/api/employee');
-  public addEmployee(newEmployee: Employee): void {
-    this.employee = this.http.post<Employee[]>('/api/adduser', newEmployee);
+  public addEmployee(newEmployee: Employee) {
+    return this.http.post<Employee[]>('/api/adduser', newEmployee);
   }
 }

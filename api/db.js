@@ -2,9 +2,9 @@ const mysql = require('mysql');
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'chris',
+    user: 'owen',
     password: 'password',
-    database: 'world'
+    database: 'employees'
 })
 
 db.connect(function(err) {
@@ -22,7 +22,7 @@ exports.addUser = (data, callback) => {
             callback(results.insertId)
          }
     )
-}
+};
 
 exports.getUsers = (callback) => {
     db.query(

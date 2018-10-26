@@ -17,13 +17,10 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   addEmployee(addForm): void {
-    if (addForm.valid) {
       var employeeToAdd = this.newEmployee;
       this.newEmployee = new Employee();
-      this.data.addEmployee(employeeToAdd);
-    } else {
-      console.error("Add Employee form is in an invalid state.");
-    }
+      this.data.addEmployee(employeeToAdd).subscribe(() => {
+      });
   }
 
   ngOnInit() {

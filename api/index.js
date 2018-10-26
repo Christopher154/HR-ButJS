@@ -1,7 +1,8 @@
 const express = require('express');
-const db = './db.js'
+const db = require('./db.js')
 
 const api = express();
+api.use(express.json())
 
 function updateUsers  (usersReady) {
     db.getUsers((rows) => {
