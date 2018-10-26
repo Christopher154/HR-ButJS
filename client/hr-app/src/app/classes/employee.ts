@@ -1,7 +1,9 @@
 export class Employee {
-    id: number;
+    department_id: number;
     first_name: string;
     last_name: string;
     address: string;
-    department: string;
+    nin: string;
+    iban: number;
+    starting_salary: number;
 }
