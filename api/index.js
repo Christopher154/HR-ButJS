@@ -5,7 +5,7 @@ const api = express();
 
 function updateUsers  (usersReady) {
     db.getUsers((rows) => {
-        cities = rows;
+        users = rows;
         usersReady();
     })
 }
@@ -17,6 +17,13 @@ api.post('/adduser', (req, res) => {
         updateUsers(() => {
             res.send(users)
         })
+    })
+})
+
+api.post('/generateEmployeeReport', (req, res) => {
+    db.getEmployeeReport(req.body, (results) => {
+        users = results;
+        res.send(users)
     })
 })
 
